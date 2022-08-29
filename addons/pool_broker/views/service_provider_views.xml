@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="service_provider_model_action" model="ir.actions.act_window">
+        <field name="name">Service Providers</field>
+        <field name="res_model">pool_broker.service_provider</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="service_provider_tree_view" model="ir.ui.view">
+        <field name="name">pool_broker.service_provider.name</field>
+        <field name="model">pool_broker.service_provider</field>
+        <field name="arch" type="xml">
+            <tree string="Service Providers">
+                <field name="name" />
+                <field name="state" />
+                <field name="phone" />
+                <field name="contact" />
+                <field name="date_contacted" />
+                <!-- <field name="activity_ids" /> -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- <record id="service_provider_form_view" model="ir.ui.view">
+        <field name="name">pool_broker.service_provider.name</field>
+        <field name="model">pool_broker.service_provider</field>
+        <field name="arch" type="xml">
+            <form string="Service Providers">
+                <field name="name" string='Company Name' />
+                <field name="state" />
+                <field name="date_contacted" />
+                <field name="phone" />
+                <field name="desired_locations" />
+                <field name="contact" />
+                <field name="contact_position" />
+                <field name="notes" />
+            </form>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" />
+                <field name="activity_ids" widget="mail_activity" />
+                <field name="message_ids" widget="mail_thread" />
+            </div>
+        </field>
+    </record> -->
+
+</odoo>
