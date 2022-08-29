@@ -1,7 +1,7 @@
 version: '3'
 services:
   odoo:
-    image: registry.digitalocean.com/pool-service-marketplace/odoo-plus-pool:latest
+    image: registry.digitalocean.com/pool-service-marketplace/godoo-plus-pool:latest
     env_file: .env
     depends_on:
       - postgres

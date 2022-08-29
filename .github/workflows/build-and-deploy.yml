@@ -59,6 +59,8 @@ jobs:
           script: |
             # Login to registry
             docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
+            # Move into correct dir with docker-compose.yml
+            cd odoo
             # Reload docker compose
             docker-compose up -d
 
