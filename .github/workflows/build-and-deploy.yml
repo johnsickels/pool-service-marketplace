@@ -59,6 +59,8 @@ jobs:
           script: |
             # Login to registry
             docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
+            # pull new docker image
+            docker pull $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
             # Move into correct dir with docker-compose.yml
             cd odoo
             # Reload docker compose

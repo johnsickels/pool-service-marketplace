@@ -10,7 +10,7 @@
     'description': """
 This module contains the admin, customer, and user facing website for the Pool Broker.
     """,
-    'depends': ['base'],
+    'depends': ['base', 'base_address_city'],
     'data': [
         'security/ir.model.access.csv',
         'views/service_provider_views.xml',
