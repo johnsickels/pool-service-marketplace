@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="pool_model_action" model="ir.actions.act_window">
-        <field name="name">Pools</field>
+        <field name="name">Accounts</field>
         <field name="res_model">pool_broker.pool</field>
         <field name="view_mode">tree,form</field>
     </record>
