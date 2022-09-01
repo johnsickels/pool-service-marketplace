@@ -57,18 +57,21 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: IMAGE_NAME,REGISTRY,{{ secrets.DIGITALOCEAN_ACCESS_TOKEN }},GITHUB_SHA
           script: |
-            # Login to registry
+            # login to registry
             docker login -u ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} -p ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }} registry.digitalocean.com
-            # docker pull $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
-            # Move into correct dir with docker-compose.yml
+            # move into correct dir with docker-compose.yml
             cd odoo
-            # Pull new docker image
-            # Reload docker compose
+            # stop and remove odoo container
+            docker stop odoo_odoo_1
+            docker rm odoo_odoo_1
+            # pull and rebuild the odoo container
+            docker pull $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+            docker-compose up -d
+
+            # docker pull $(echo $REGISTRY)/$(echo $IMAGE_NAME):latest
+            # pull new docker image
+            # reload docker compose
             # docker-compose pull && docker-compose up -d
 
-            # Pull new Image: 
-            docker-compose pull
-            # Rebuild docker container with new Image: 
-            docker-compose up --force-recreate --build -d
-            # Delete unused Images: 
+            # delete unused Images: 
             docker image prune -f

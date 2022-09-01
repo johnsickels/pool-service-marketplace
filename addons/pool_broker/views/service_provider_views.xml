@@ -13,9 +13,9 @@
         <field name="arch" type="xml">
             <tree string="Service Providers">
                 <field name="name" />
-                <field name="state" />
-                <field name="contact" />
+                <field name="state" widget="badge" decoration-danger="state == 'unqualified'" decoration-warning="state in ('not_interested', 'needs_follow_up')" decoration-success="state == 'interested'" />
                 <field name="phone" />
+                <field name="contact" />
                 <field name="date_contacted" />
             </tree>
         </field>
