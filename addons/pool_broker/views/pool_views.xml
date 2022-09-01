@@ -14,6 +14,7 @@
             <tree>
                 <field name="location" />
                 <field name="current_service_provider" />
+                <field name="monthly_price" />
             </tree>
         </field>
     </record>

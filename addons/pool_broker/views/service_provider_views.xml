@@ -14,10 +14,9 @@
             <tree string="Service Providers">
                 <field name="name" />
                 <field name="state" />
-                <field name="phone" />
                 <field name="contact" />
+                <field name="phone" />
                 <field name="date_contacted" />
-                <!-- <field name="activity_ids" /> -->
             </tree>
         </field>
     </record>
